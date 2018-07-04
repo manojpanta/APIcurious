@@ -1,7 +1,11 @@
 <h1> Welcome To API Curius</h1>
 <% if current_user %>
   <h2>Welcome! <%=current_user.name%> </h2>
-  <%= link_to "Logout", logout_path, method: :delete %>
+  <h3><%= link_to "Logout", logout_path, method: :delete %></3>
+  <%@repos.each do |repo| %>
+  <h2 class='repo_name'><%=link_to repo.name, repo.url%></h2>
+  <br>
+  <%end%>
 <%else%>
   <h2> <%= link_to 'Login With Github', '/auth/github'%> </h2>
 <%end%>
