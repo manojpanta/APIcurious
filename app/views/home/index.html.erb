@@ -3,7 +3,8 @@
   <h2>Welcome! <%=current_user.name%> </h2>
   <h3><%= link_to "Logout", logout_path, method: :delete %></3>
   <h3><%= link_to 'Repositories', repositories_path%></3>
-  <h3><%= link_to 'Followers', followers_path%></3>
+  <h3><%= link_to 'Followers', followers_path%></h3>
+  <h3><%= link_to 'Following', following_path %></h3>
 <%else%>
   <h2> <%= link_to 'Login With Github', '/auth/github'%> </h2>
 <%end%>
