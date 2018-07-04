@@ -2,10 +2,8 @@
 <% if current_user %>
   <h2>Welcome! <%=current_user.name%> </h2>
   <h3><%= link_to "Logout", logout_path, method: :delete %></3>
-  <%@repos.each do |repo| %>
-  <h2 class='repo_name'><%=link_to repo.name, repo.url%></h2>
-  <br>
-  <%end%>
+  <h3><%= link_to 'Repositories', repositories_path%></3>
+  <h3><%= link_to 'Followers', followers_path%></3>
 <%else%>
   <h2> <%= link_to 'Login With Github', '/auth/github'%> </h2>
 <%end%>
