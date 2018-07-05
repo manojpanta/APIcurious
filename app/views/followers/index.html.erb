@@ -1,4 +1,6 @@
 <h1> Your Followers </h1>
 <%@followers.each do |f| %>
-<h2><%=f%></h2>
+<%name = f[0]%>
+<%link = f[1]%>
+<h2 class='repo_name'><%=link_to name, link%></h2>
 <%end%>

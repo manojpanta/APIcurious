@@ -5,8 +5,8 @@ class MyFollowings
   end
 
   def followings
-    data.map do |following|
-      following[:login]
+    data.map do |follower|
+      [follower[:login].capitalize, follower[:html_url]]
     end
   end
 

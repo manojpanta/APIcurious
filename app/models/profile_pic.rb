@@ -1,23 +1,21 @@
-class MyFollowers
+class ProfilePic
 
   def initialize(current_user)
     @current_user = current_user
   end
 
-  def followers
-    data.map do |follower|
-      [follower[:login].capitalize, follower[:html_url]]
-    end
+  def profile_picture
+    data[:avatar_url]
   end
 
-  private
+
 
   def conn
     Faraday.new(url: "https://api.github.com")
   end
 
   def response
-    conn.get("users/#{@current_user.user_name}/followers")
+    conn.get("users/#{@current_user.user_name}?access_token=#{@current_user.oauth_token}")
   end
 
   def data
