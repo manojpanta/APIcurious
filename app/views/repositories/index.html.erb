@@ -1,4 +1,5 @@
 <h1> Repositories</h1>
+<center><h2><%=link_to 'Create New Repository', new_repository_path %></h2></center>
 <%@repos.each do |repo| %>
 <h2 class='repo_name'><%=link_to repo.name, repo.url%></h2>
 <%end%>
