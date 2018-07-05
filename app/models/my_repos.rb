@@ -1,34 +1,19 @@
 class MyRepos
   attr_reader :name
-
   def initialize(current_user, name="new_name")
     @name = name
     @current_user = current_user
   end
 
   def repos
-    data.map do |repo|
-      Repo.new(repo)
-    end
+    MyReposService.new(@current_user).repos
   end
 
   def new_repo
     data1
-
   end
 
   private
-  def conn
-    Faraday.new(url: "https://api.github.com")
-  end
-
-  def response
-    conn.get("user/repos?access_token=#{@current_user.oauth_token}")
-  end
-
-  def data
-    JSON.parse(response.body, symbolize_names: true)
-  end
 
   def connection
     Faraday.new(url: "https://api.github.com")

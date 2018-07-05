@@ -1,26 +1,9 @@
 class MyFollowings
-
   def initialize(current_user)
     @current_user = current_user
   end
 
   def followings
-    data.map do |follower|
-      [follower[:login].capitalize, follower[:html_url]]
-    end
-  end
-
-  private
-
-  def conn
-    Faraday.new(url: "https://api.github.com")
-  end
-
-  def response
-    conn.get("users/#{@current_user.user_name}/following")
-  end
-
-  def data
-    JSON.parse(response.body, symbolize_names: true)
+    MyFollowingsService.new(@current_user).followings
   end
 end

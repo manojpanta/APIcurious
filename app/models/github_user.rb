@@ -1,8 +1,8 @@
-class Repo
+class GithubUser
   attr_reader :name,
               :url
   def initialize(attributes)
-    @name = attributes[:name]
+    @name = attributes[:login].capitalize
     @url = attributes[:html_url]
   end
 end
