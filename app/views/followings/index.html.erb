@@ -1,4 +1,7 @@
 <h1> Following </h1>
 <%@myfollowings.each do |f|%>
-  <h2 class='repo_name'><%=link_to f.name, f.url%></h2>
+<div class='followers'>
+  <h2 class='repo_name'><%= link_to f.name, f.url%></h2>
+  <%=image_tag("#{f.avatar_url}",alt: "Smiley face", height: "42", width: "42", :class => "propic")%>
+</div>
 <%end%>
