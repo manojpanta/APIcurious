@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/repositories', to: 'repositories#index'
   get '/followers', to: 'followers#index'
   get '/new_repository', to: 'repositories#new'
+  post '/repositories', to: 'repositories#create'
   get '/following', to: "followings#index"
   delete '/logout', to: 'sessions#destroy'
 end

@@ -54,3 +54,20 @@ center h1 {
   flex-direction: inherit;
   margin-bottom: 10px;
 }
+
+
+.entername {
+  font-size: inherit;
+  height: 40px;
+  text-align: center;
+  margin-top: 30px;
+  width: 20%;
+  border-radius: 20px;
+}
+.createbutton {
+  font-size: larger;
+  text-align: center;
+  margin-top: 30px;
+  width: 20%;
+  background: cadetblue;
+}

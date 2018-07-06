@@ -1,8 +1,7 @@
-<%= form_for @repository do |f| %>
-      <section>
-        <h2>Name:</h2>
-        <h3><%= f.text_field :name%></h3>
-      </section>
-      <h3><%=f.submit class: 'add-button' %></h3>
-    <% end %>
-  </article>
+<center><form class="new-merchant" action="/repositories" method="post">
+  <input class="entername" type="text" name="repo_name" placeholder="Name Required">
+  <br>
+  <input class="createbutton" type="submit" value="Create Repository">
+  <br>
+  <a class="cancel" href="/repositories">Cancel</a>
+</form></center>
