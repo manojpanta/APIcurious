@@ -10,7 +10,7 @@ class MyRepos
   end
 
   def new_repo
-    data1
+    data
   end
 
   private
@@ -19,13 +19,13 @@ class MyRepos
     Faraday.new(url: "https://api.github.com")
   end
 
-  def response1
-    connection.post("user/repos?access_token=#{@current_user.oauth_token}&scope=public_repo") do |req|
-      req.body = {"name": "Hello-World","description": "This is your first repository"}
+  def response
+    connection.post("user/repos?access_token=#{@current_user.oauth_token}") do |req|
+      req.body = '{"name": "this is being created by my app", "description": "This is your first repository"}'
     end
   end
 
-  def data1
-    JSON.parse(response1.body, symbolize_names: true)
+  def data
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
