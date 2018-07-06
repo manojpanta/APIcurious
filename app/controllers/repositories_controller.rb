@@ -1,6 +1,5 @@
 class RepositoriesController < ApplicationController
   skip_before_action :verify_authenticity_token
-
   def index
     @repos = MyRepos.new(current_user).repos
   end
